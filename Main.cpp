@@ -161,22 +161,22 @@ void text_box(const Rect& text_box, const Color& box_color, const Font& font, co
 
 
 void Main(void) {
-	String text = U"そめいん";//表示するテキスト
+	String text = U"タイトル";//表示するテキスト
 	uint8 mode_flag = 0;//モード
 
 	int64 count = 0;
 
-	Font font(FontMethod::MSDF, 40, U"C:\\Users\\Kouno\\kura\\フォント\\corpgo-b-ver2-font_202202\\corpgo-b-ver2-font_202202\\Corporate-Logo-Bold-ver2.otf");
+	Font font(FontMethod::MSDF, 40, Resource(U".\\Corporate-Logo-Bold-ver2.otf"));
 
 
 	while (System::Update()) {
 		switch (mode_flag) {
 		case count_mode:
-			Scene::SetBackground(Palette::Skyblue);
+			Scene::SetBackground(Color{116,169,81});
 
-			font(text).drawAt(100, 400, 50, Color{ 150, 150,150 });
+			font(text).drawAt(100, 400, 50, Color{ 255, 255,255 });
 
-			font(count).drawAt(200, 400, 200, Color{ 150, 150,150 });
+			font(count).drawAt(200, 400, 200, Color{ 255, 255,255 });
 
 			if (botton_Clicked(Rect(110, 330, 580, 150), Color{ 255, 255,255 }, font, Color{ 150, 150,150 }, U"+1") == true) {
 				count++;
